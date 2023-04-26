@@ -6,16 +6,21 @@ This web app is designed to help me manage my driving gig, where I transport lea
 
 The app includes the following features:
 
-1. User authentication and authorization
-2. User account management
-3. Ride booking and scheduling
-4. Real-time tracking of ride progress
-5. Online payment processing
-6. Song request feature for passengers
+1. Drivers can create and manage their routes
+2. Students and parents can sign up, schedule rides, and make payments
+3. Students and parents can view the estimated time of arrival for their ride
+4. Students can request special songs to be played during their ride
+5. The application supports real-time data updates
+6. Drivers can sign up and manage their own transportation services, expanding the user base of the application.
 
 ## Tech Stack ##
 
 The app is built using Django, a Python web framework that provides a powerful toolkit for building web applications. The app also uses a PostgreSQL database for storing data.
+
+1. Backend: Django, Python
+2. Frontend: ReactJS
+3. Database: SQLite
+4. Other libraries: Bootstrap
 
 ## Installation ##
 
@@ -43,13 +48,21 @@ $ python manage.py runserver
 ```
 
 The app should now be accessible at http://localhost:8000.
-Usage
+
+## Usage ##
 
 To use the app, create an account and log in. From there, you can book rides, track ride progress, and make payments. Passengers can also request songs by sending a message to the driver.
 
+### Future Enhancements ###
+
+- Implement a mobile app for a better user experience on-the-go
+- Integrate with a payment gateway for seamless and secure payments
+- Implement real-time location tracking for improved route management
+
 ### Contributing ###
 
-Contributions to the app are welcome! If you have any ideas for new features or improvements, please feel free to submit a pull request.
+Contributions to the app are welcome! If you have any ideas for new features or improvements, please feel free to submit a pull request. <br>
+For any inquiries or feedback, please contact tnkosi.code@gmail.com.
 
 ### License ###
 
