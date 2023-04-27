@@ -27,8 +27,8 @@ The app is built using Django, a Python web framework that provides a powerful t
 To install the app, clone the repository from GitHub and set up a virtual environment. Then, install the dependencies using pip in your shell:
 
 ```shell
-$ git clone https://github.com/my-driving-gig-app.git
-$ cd my-driving-gig-app
+$ git clone https://github.com/asambeni.git
+$ cd asambeni
 $ python -m venv venv
 $ source venv/bin/activate
 $ pip install -r requirements.txt
