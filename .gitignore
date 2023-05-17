@@ -1,0 +1,14 @@
+mbathaVenv/lib64
+mbathaVenv/pyvenv.cfg
+mbathaVenv/bin/
+mbathaVenv/lib/
+mbathaVenv/lib64/
+mbathaVenv/include/
+mbathaVenv/iDriveSometimes/db.sqlite3
+mbathaVenv/iDriveSometimes/manage.py
+mbathaVenv/iDriveSometimes/asambeni/__pycache__/
+mbathaVenv/iDriveSometimes/asambeni/migrations/
+mbathaVenv/iDriveSometimes/asambeni/*.py
+mbathaVenv/iDriveSometimes/iDriveSometimes/__pycache__/
+mbathaVenv/iDriveSometimes/iDriveSometimes/*.py
+
