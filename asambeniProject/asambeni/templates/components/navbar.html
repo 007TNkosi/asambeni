@@ -1,0 +1,101 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3 border-bottom" data-bs-theme="dark">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse justify-content-start" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+                <!-- === Menu Options for Users === -->
+                {% if user.is_authenticated %}
+                    <!-- === Admin Navbar List === -->
+                    {% if user.is_superuser %}
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="adminDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                        style="background: orange; border-radius: 5px">
+                        <i class="bi bi-person-badge"></i>
+                      </a>
+
+                      <ul class="dropdown-menu dropdown-menu-dark">
+                        <li><a class="dropdown-item" href="{% url 'admin:index' %}">Admin View</a></li>
+                        <li><a class="dropdown-item" href="#">Driver Management</a></li>
+                        <li><a class="dropdown-item" href="#">User Management</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+                      </ul>
+                    </li>
+
+                    <!-- === Learner Navbar List === -->
+                    {% elif user_type == 'learner' %}
+
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="learnerDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                        style="background: orange; border-radius: 5px">
+                        <i class="bi bi-person"></i> 
+                      </a>
+
+                      <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="learnerDropdown">
+                        {% comment %} <li><a class="dropdown-item" href="{% url 'edit_profile' %}">Edit Account</a></li>
+                        <li><a class="dropdown-item" href="#">Request Song</a></li>
+                        <li><a class="dropdown-item" href="#">Playlist</a></li>
+                        <li><a class="dropdown-item" href="{% url 'track' %}">trackMe</a></li>
+                        <li><a class="dropdown-item" href="{% url 'chat' %}">chatTo</a></li> {% endcomment %}
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+                      </ul>
+                    </li>
+
+                    <!-- === Driver Navbar List === -->
+                    {% elif user_type == 'Driver' %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="driverDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="background: orange; border-radius: 5px">
+                            <i class="bi bi-person"></i> 
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="#">User Management</a></li>
+                            <li><a class="dropdown-item" href="#">Route Management</a></li>
+                            <li><a class="dropdown-item" href="#">Songs Requested</a></li>
+                            <li><a class="dropdown-item" href="#">Make announcement</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+                        </ul>  
+                    </li>
+
+                    {% endif %}
+
+                    {% else %}
+                        <!-- === Default Navbar List === -->
+                        <li class="nav-item" style="margin-right: 5px;">
+                            <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'about' %}">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#signupModal" class="nav-link">
+                                Sign Up
+                            </button>
+                            <!-- Modal -->
+                            <div class="modal modal-sm fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="signupModalLabel">Type of User</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body text-center">
+                                            <a type="submit" href="{% url 'driver_signup' %}" class="btn btn-dark">Be A Driver!</a>
+                                            <a type="submit" href="{% url 'learner_signup' %}" class="btn btn-dark">Be A Rider!</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+        <a class='navbar-brand' href="{% url 'index' %}">
+            <span class="navbar-brand mb-0 h1">
+                Asambeni
+            </span>
+        </a>
+    </div>
+</nav>
+

@@ -1,0 +1,22 @@
+<footer class="footer mt-auto bg-light">
+    <div class="text-center">
+        <div class="bg-dark text-white p-2" data-bs-theme="dark">
+            <div class="hstack gap-2">
+                {% if user.is_authenticated %}
+                    <div class="p-2">{{user.username}}</div>
+                    {% endif %}
+                    <div class="p-2 ms-auto">
+                        Asambeni Scholar Transportation
+                    </div>
+                    <div class="vr"></div>
+                    <div class="p-2">
+                        By tnkosi.code 
+                        &copy; 2023 All rights reserved.
+                    </div>
+                </div>
+            </div>
+        {% comment %} 
+            Add Link to Portfolio Website
+        {% endcomment %}
+    </div>
+</footer>
